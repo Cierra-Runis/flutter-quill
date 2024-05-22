@@ -7,7 +7,7 @@ import '../../../utils/widgets.dart';
 import '../base_button/base_value_button.dart';
 import '../base_toolbar.dart';
 
-class QuillToolbarToggleCheckListButton extends QuillToolbarBaseValueButton<
+class QuillToolbarToggleCheckListButton extends QuillToolbarBaseButton<
     QuillToolbarToggleCheckListButtonOptions,
     QuillToolbarToggleCheckListButtonExtraOptions> {
   const QuillToolbarToggleCheckListButton({
@@ -22,7 +22,7 @@ class QuillToolbarToggleCheckListButton extends QuillToolbarBaseValueButton<
 }
 
 class QuillToolbarToggleCheckListButtonState
-    extends QuillToolbarBaseValueButtonState<
+    extends QuillToolbarBaseButtonState<
         QuillToolbarToggleCheckListButton,
         QuillToolbarToggleCheckListButtonOptions,
         QuillToolbarToggleCheckListButtonExtraOptions,
@@ -52,11 +52,8 @@ class QuillToolbarToggleCheckListButtonState
   @override
   String get defaultTooltip => context.loc.checkedList;
 
-  IconData get iconData {
-    return options.iconData ??
-        baseButtonExtraOptions?.iconData ??
-        Icons.check_box;
-  }
+  @override
+  IconData get defaultIconData => Icons.check_box;
 
   @override
   Widget build(BuildContext context) {
